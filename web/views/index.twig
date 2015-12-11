@@ -1,47 +1,184 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/images/lang-logo.png">
-    </a>
-    <h1>Getting Started with PHP on Heroku</h1>
-    <p>This is a sample PHP application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-php"><span class="glyphicon glyphicon-flash"></span> Getting Started with PHP</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/php-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Торговые стратегии Forex</title>
+  <meta charset="utf-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+  <meta name="keywords" content="Торговые стратегии, Forex, биржевая игра, рынок форекс, дилинговый центр, брокер, трейдер">
+  <meta name="description" content="На сайте представлены различные торговые стратегии для
+  успешной работы на рынке Forex. Кроме того, имеются рекомендации по поводу выбора дилингового центра для доступа к торгам
+  на валютном рынке, а также полезная литература по биржевой торговле">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="mainForm.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+</head>
+<body>
+<div class="img">
+    <img id="NewJork_img" src="img/NewJork.jpg" alt="NewJork_img">
 </div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-php" class="alert-link">Getting Started with PHP on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/php-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it grabbed all the dependencies in the <a href="https://github.com/heroku/php-getting-started/blob/master/composer.json">composer.json</a>.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-        <li>Check out the <a href="https://devcenter.heroku.com/articles/getting-started-with-php">Getting Started</a> guide to learn more!</li>
+<nav  class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div id="nav" class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Главная </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="li1"><a id="a1" onclick="basic_concepts()">Forex: суть и <br>основные понятия</a></li>
+        <li id="li2"><a id="a2" onclick="how()">Как стать <br> трейдером</a></li>
+        <li id="li3" class="dropdown">
+          <a  id="a3" class="dropdown-toggle" data-toggle="dropdown" onclick="tradingStrategies()">Торговые<br>стратегии<span class="caret"></span></a>
+          <ul id="strategy" class="dropdown-menu">
+            <li><a onclick="channelStrategy()">Канальная стратегия</a></li>
+            <li><a onclick="horizontalChannel()">Торговля в горизонтальном канале и на прорыве</a></li>
+            <li><a  onclick="OutChandeliers()">Выход Люстры</a></li>
+          </ul>
+        </li>
+        <li><a id="a4" href="Page2.html">Механические <br>торговые системы</a></li>
+        <li><a id="a5" href="#">Литература<br>&nbsp</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="a6" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up <br>&nbsp</a></li>
+        <li><a id="a7" href="#"><span class="glyphicon glyphicon-log-in"></span> Login <br>&nbsp</a></li>
       </ul>
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-php">Getting Started with PHP on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-php">Deploying PHP Apps on Heroku</a></li>
-      </ul>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div id="menuRow" class="row content">
+    <div id="menu" class="col-sm-2 ">
+      <p><a onclick="basic_concepts()"><br>Forex: суть и <br>основные понятия</a></p>
+      <p><a onclick="how()" >Как стать трейдером</a></p>     
+      <p><a onclick="tradingStrategies()">Торговые стратегии</a></p> 
+      <p><a onclick="tradingStrategies()">Механические торговые системы</a></p> 
+      <p><a onclick="tradingStrategies()">Литература</a></p>     
     </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
+    <div id="mainCol" class="col-sm-8 " > 
+      <br>
+      <h4 id="greeting">На данном сайте собраны различные торговые стратегии для успешной работы на рынке Forex. Кроме того, имеются некоторые рекомендации по поводу выбора брокера (дилингового центра), через которого Вы получите доступ к торгам на международном валютном рынке, а также множество другой полезной информации для трейдера.</h4>
+      <h4 id="greetingSign">С уважением, Владимир &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </h4>
+      <hr>
+      <h4>Вступительное слово:</h4>
+      <p>Перед каждым начинающим трейдером, пришедшим на Forex с серьезными намерениями, встает вопрос о том, КАК нужно торговать, чтобы стабильно получать прибыль. Иными словами, речь идет о торговой стратегии, или своде правил, алгоритме действий, в соответствии с которым необходимо работать. Успешные трейдеры вырабатывают свои торговые стратегии годами и никогда не перестают их совершенствовать. Меняется рынок, соответственно, должны меняться и параметры торговой стратегии для того, чтобы она могла так же успешно приносить прибыль. Поэтому, если Вы в данный момент являетесь новичком и планируете впервые попробовать свои силы на Forex, не тешьте себя иллюзиями о том, что через месяц-два Вы станете миллионером. Нет, Вам еще предстоит пройти весьма нелегкий путь, состоящий из кризисов, неудач и разочарований, но который в конечном итоге может привести Вас к успеху. Хочу Вас предупредить, что использование торговых стратегий, представленных на данном сайте, еще не дает Вам абсолютно никаких ГАРАНТИЙ. Их следует рассматривать лишь как некие образцы, «отправные пункты», отталкиваясь от которых Вы со временем сможете выработать свою собственную, уникальную торговую стратегию.
+      </p>    
+      <hr>
+      <p>Т.е. данный сайт не даст Вам ответа на вопрос, как за короткое время «урвать» кучу денег; он даст Вам ответ на вопрос, КАК НАЧАТЬ заниматься торговлей на Forex, чтобы иметь возможность со временем стать профессиональным трейдером.</p>
+    </div>
+    <div id="aside" class="col-sm-2 ">
+      <div ><br></div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
   </div>
 </div>
-
-{% endblock %}
+<footer class="container-fluid text-center" style="height:150px;">
+  <p>Footer Text</p>
+</footer>
+<script>
+$(document).ready(function(){
+    $("#a1,#a2,#a3,#a4,#a5,#a6,#a7").mouseenter(function(){
+        $(this).css("background-color", "#444444").fadeTo("slow", 0.5);
+    });
+    $("#a1,#a2,#a3,#a4,#a5,#a6,#a7").mouseleave(function(){
+        $(this).css("background-color", "#222222").fadeTo("slow", 1);
+    });
+});
+function basic_concepts() {
+  delActveClass();
+  $("#li1").addClass("active");
+  $(document).ready(function(){ 
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuMain.txt");         
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/basic_concepts.txt");
+        $("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}  
+function how() {
+  delActveClass();
+  $("#li2").addClass("active");
+  $(document).ready(function(){
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuMain.txt");          
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/how.txt");
+        $("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}
+function tradingStrategies() {
+ delActveClass();
+  $("#a3").css("color","#ffffff");
+  $(document).ready(function(){
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuTradingStrategies.txt");          
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/tradingStrategies.txt");
+        //$("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}  
+function channelStrategy() {
+ delActveClass();
+  $("#a3").css("color","#ffffff");
+  $(document).ready(function(){
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuTradingStrategies.txt");          
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/channelStrategy.txt");
+        $("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}  
+function horizontalChannel() {
+ delActveClass();
+  $("#a3").css("color","#ffffff");
+  $(document).ready(function(){
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuTradingStrategies.txt");          
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/horizontalChannel.html");
+        $("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}  
+function OutChandeliers() {
+ delActveClass();
+  $("#a3").css("color","#ffffff");
+  $(document).ready(function(){
+    $("#menu * ").remove();         
+    $("#menu").load("txt/menuTradingStrategies.txt");          
+    $("#mainCol").fadeOut(1000, function(){
+        $("#mainCol").load("txt/OutChandeliers.html");
+        $("#mainCol").scrollTop();
+    });
+    $("#mainCol").fadeIn(1000);
+  });
+}
+function delActveClass() {
+  var x = document.getElementsByTagName("li");
+  var x1 = document.getElementById("a3");
+  if (x1.style.color == "rgb(255, 255, 255)"){$("#a3").css("color","");}
+  for (var i = 0; i < x.length; i++) {
+    if(x[i].className == "active") {$(x[i]).removeClass("active");}
+  }
+}
+</script>
+</body>
+</html>
